@@ -1,0 +1,26 @@
+---
+title: "Example"
+---
+
+# Load the data
+
+```{python}
+import pandas as pd
+
+penguins = pd.read_csv("data/palmer-penguins.csv")
+```
+
+# Explore the data
+
+See @fig-bill-sizes for an exploration of bill sizes by species.
+
+```{python}
+#| label: fig-bill-sizes
+#| fig-cap: "Bill sizes by species"
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+g = sns.FacetGrid(penguins, hue="species", height=3, aspect=3.5/1.5)
+g.map(plt.scatter, "bill_length_mm", "bill_depth_mm").add_legend()
+```

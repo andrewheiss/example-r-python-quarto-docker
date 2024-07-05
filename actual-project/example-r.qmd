@@ -1,0 +1,28 @@
+---
+title: "Example"
+---
+
+# Load the data
+
+```{r}
+#| message: false
+
+library(tidyverse)
+
+penguins <- read_csv("data/palmer-penguins.csv")
+```
+
+
+# Explore the data
+
+See @fig-bill-sizes for an exploration of bill sizes by species.
+
+```{r}
+#| label: fig-bill-sizes
+#| fig-cap: "Bill sizes by species"
+#| warning: false
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point()
+```
+

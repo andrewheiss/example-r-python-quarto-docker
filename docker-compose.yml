@@ -1,0 +1,17 @@
+services:
+  rstudio:
+    platform: linux/amd64  # Need to include this when building on M1 macOS
+    build:
+      context: "."
+      dockerfile: Dockerfile
+    ports:
+      # Make RStudio server accessible at http://localhost:8787
+      - 127.0.0.1:8787:8787
+    environment:
+      - DISABLE_AUTH=true  # Allow password-less login to RStudio server instance
+    
+    volumes:
+      # Mount the actual-project folder into the container so that local files 
+      # are persistent across instances of the container and so that any changes 
+      # the container makes appear locally
+      - "./actual-project:/home/rstudio/actual-project"
