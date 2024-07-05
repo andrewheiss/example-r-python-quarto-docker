@@ -14,4 +14,4 @@
 
 3. In a browser, go to `http://localhost:8787`. This is an RStudio Server instance running inside the Docker container
 
-4. Run the different `.qmd` files from your browser. Any edits you make will appear in your local file system at `actual-projec`, since it's mounted/mapped into the container
+4. Run the different `.qmd` files from your browser. Any edits you make will appear in your local file system at `actual-project`, since it's mounted/mapped into the container
